@@ -1,6 +1,5 @@
 from bs4 import BeautifulSoup
 from selenium import webdriver
-from selenium.webdriver.chrome.service import service
 
 chrome_driver = r'C:\Users\user\Downloads\chrome\chromedriver-win64'
 
