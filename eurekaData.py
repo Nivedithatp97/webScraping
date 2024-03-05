@@ -13,6 +13,8 @@ sheet = wb.active
 
 sheet["A1"] = "Product Name"
 sheet["B1"] = "Product Price"
+sheet.column_dimensions['A'].width = 60  
+sheet.column_dimensions['B'].width = 30
 
 row = 2
 
