@@ -1,10 +1,12 @@
 from bs4 import BeautifulSoup
 import openpyxl
+from selenium import webdriver
 
-with open("Blink.html", "r", encoding="utf-8") as file:
-    html_content = file.read()
+url="https://www.blink.com.kw/en/Product/Products?searchText=mobile%20phone&sortBy=&filterBy=cat:"
+driver=webdriver.Chrome()
+driver.get(url)
 
-soup = BeautifulSoup(html_content, "html.parser")
+soup = BeautifulSoup(driver.page_source, "html.parser")
 
 list_items = soup.find_all("div", class_="items")
 wb = openpyxl.Workbook()
