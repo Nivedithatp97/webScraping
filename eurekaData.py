@@ -1,10 +1,12 @@
 from bs4 import BeautifulSoup
 import openpyxl
+from selenium import webdriver
 
-with open("eureka.html", "r", encoding="utf-8") as file:
-    html_content = file.read()
+url="https://www.eureka.com.kw/products/details/235203?instant_records%5Bquery%5D=mobile%20phone"
+driver=webdriver.Chrome()
+driver.get(url)
 
-soup = BeautifulSoup(html_content, "html.parser")
+soup = BeautifulSoup(driver.page_source, "html.parser")
 
 list_items = soup.find_all("li", class_="ais-Hits-item")
 print(soup)
